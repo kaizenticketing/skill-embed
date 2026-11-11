@@ -1,0 +1,15 @@
+root = true
+
+[*]
+indent_style = tab
+insert_final_newline = true
+charset = utf-8
+end_of_line = lf
+
+[*.{cs,csx}]
+indent_size = 4
+csharp_style_namespace_declarations = file_scoped:warning
+
+[*.{yml,yaml,md}]
+indent_style = space
+indent_size = 2
