@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>Kaizen.SkillEmbed.Tests</RootNamespace>
+		<IsPackable>false</IsPackable>
+		<UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
+		<TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
+		<!-- test names are sentences in snake case, and a test spells its values out where it uses them -->
+		<NoWarn>$(NoWarn);CA1707;CA1861</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.3.0" />
+		<PackageReference Include="xunit.v3" Version="3.2.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\..\src\Kaizen.SkillEmbed\Kaizen.SkillEmbed.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- a skill embedded the way the README tells a program to embed its own -->
+		<EmbeddedResource Include="Skills\sample\**\*" LogicalName="skills/sample/%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="Xunit" />
+	</ItemGroup>
+
+</Project>
