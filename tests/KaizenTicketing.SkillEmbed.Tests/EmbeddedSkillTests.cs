@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Kaizen.SkillEmbed.Tests;
+namespace KaizenTicketing.SkillEmbed.Tests;
 
 public class EmbeddedSkillTests
 {

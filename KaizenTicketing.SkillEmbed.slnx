@@ -1,0 +1,8 @@
+<Solution>
+	<Folder Name="/src/">
+		<Project Path="src/KaizenTicketing.SkillEmbed/KaizenTicketing.SkillEmbed.csproj" />
+	</Folder>
+	<Folder Name="/tests/">
+		<Project Path="tests/KaizenTicketing.SkillEmbed.Tests/KaizenTicketing.SkillEmbed.Tests.csproj" />
+	</Folder>
+</Solution>

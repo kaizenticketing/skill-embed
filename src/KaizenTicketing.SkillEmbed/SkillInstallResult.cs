@@ -1,4 +1,4 @@
-namespace Kaizen.SkillEmbed;
+namespace KaizenTicketing.SkillEmbed;
 
 /// <summary>
 /// What an install, a refresh or a remove did to one directory.

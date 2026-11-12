@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Kaizen.SkillEmbed.Tests;
+namespace KaizenTicketing.SkillEmbed.Tests;
 
 /// <summary>
 /// A home directory of a test's own, which goes when the test does.

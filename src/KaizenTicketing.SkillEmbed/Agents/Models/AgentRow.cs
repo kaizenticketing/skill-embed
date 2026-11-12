@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Kaizen.SkillEmbed.Agents.Models;
+namespace KaizenTicketing.SkillEmbed.Agents.Models;
 
 /// <summary>
 /// One agent of agents.json. Its own paths are the ones on Linux; macOS and Windows have theirs only where they differ.

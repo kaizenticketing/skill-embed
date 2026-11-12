@@ -1,4 +1,4 @@
-namespace Kaizen.SkillEmbed.Tests;
+namespace KaizenTicketing.SkillEmbed.Tests;
 
 public class SkillAgentTests
 {

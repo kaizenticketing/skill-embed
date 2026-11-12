@@ -1,6 +1,6 @@
 using System.Security.Cryptography;
 
-namespace Kaizen.SkillEmbed;
+namespace KaizenTicketing.SkillEmbed;
 
 /// <summary>
 /// The rules for a skill's name and for the paths of its files, and the hash both the skill and its stamp use.

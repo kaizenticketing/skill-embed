@@ -1,4 +1,4 @@
-namespace Kaizen.SkillEmbed;
+namespace KaizenTicketing.SkillEmbed;
 
 /// <summary>
 /// The skill in one place on the machine.

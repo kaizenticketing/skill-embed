@@ -1,4 +1,4 @@
-namespace Kaizen.SkillEmbed.Stamps;
+namespace KaizenTicketing.SkillEmbed.Stamps;
 
 /// <summary>
 /// What the installer leaves in a skill's directory, as <c>.skill-embed.json</c>: who wrote the skill there and what

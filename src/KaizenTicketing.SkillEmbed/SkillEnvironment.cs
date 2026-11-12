@@ -1,4 +1,4 @@
-namespace Kaizen.SkillEmbed;
+namespace KaizenTicketing.SkillEmbed;
 
 /// <summary>
 /// The machine an installer works on: the user's home directory, the operating system and the environment variables.

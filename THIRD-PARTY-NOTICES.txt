@@ -1,9 +1,9 @@
-Kaizen.SkillEmbed includes material from the project below.
+KaizenTicketing.SkillEmbed includes material from the project below.
 
 ================================================================================
 vercel-labs/skills - https://github.com/vercel-labs/skills
 
-The agent table (src/Kaizen.SkillEmbed/Agents/agents.json and
+The agent table (src/KaizenTicketing.SkillEmbed/Agents/agents.json and
 docs/supported-agents.md) is generated from src/agents.ts of this project by
 scripts/generate-agents.mjs.
 ================================================================================

@@ -1,8 +1,8 @@
 using System.Security;
 using System.Text.Json;
-using Kaizen.SkillEmbed.Stamps;
+using KaizenTicketing.SkillEmbed.Stamps;
 
-namespace Kaizen.SkillEmbed;
+namespace KaizenTicketing.SkillEmbed;
 
 /// <summary>
 /// Puts a program's <see cref="EmbeddedSkill"/> into the AI coding agents on the machine, and keeps those copies the
