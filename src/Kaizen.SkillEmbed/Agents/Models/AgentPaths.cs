@@ -1,4 +1,4 @@
-namespace KaizenTicketing.SkillEmbed.Agents.Models;
+namespace Kaizen.SkillEmbed.Agents.Models;
 
 /// <summary>
 /// Where an agent keeps its skills and what shows that it is installed, as path templates.

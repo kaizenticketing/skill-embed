@@ -31,10 +31,10 @@ jobs:
         with:
           dotnet-version: 10.0.x
 
-      - run: dotnet build KaizenTicketing.SkillEmbed.slnx --configuration Release
+      - run: dotnet build Kaizen.SkillEmbed.slnx --configuration Release
 
-      - run: dotnet test KaizenTicketing.SkillEmbed.slnx --configuration Release --no-build
+      - run: dotnet test Kaizen.SkillEmbed.slnx --configuration Release --no-build
 
       - name: Pack
         if: matrix.os == 'ubuntu-latest'
-        run: dotnet pack src/KaizenTicketing.SkillEmbed/KaizenTicketing.SkillEmbed.csproj --configuration Release --no-build --output artifacts
+        run: dotnet pack src/Kaizen.SkillEmbed/Kaizen.SkillEmbed.csproj --configuration Release --no-build --output artifacts

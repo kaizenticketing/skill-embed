@@ -1,4 +1,4 @@
-namespace KaizenTicketing.SkillEmbed.Agents.Models;
+namespace Kaizen.SkillEmbed.Agents.Models;
 
 /// <summary>
 /// agents.json, which scripts/generate-agents.mjs writes.

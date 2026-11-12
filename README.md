@@ -14,6 +14,8 @@ Your tool carries its skill as embedded resources. `KaizenTicketing.SkillEmbed` 
 dotnet add package KaizenTicketing.SkillEmbed
 ```
 
+The package is `KaizenTicketing.SkillEmbed`, and its namespace is `Kaizen.SkillEmbed`, as in the rest of Kaizen Ticketing's code.
+
 ## Use
 
 **1. Embed the skill.** Keep it in your project as a directory with a `SKILL.md`, and give each file a logical name that keeps its path - the default name turns every slash into a dot:
@@ -27,7 +29,7 @@ dotnet add package KaizenTicketing.SkillEmbed
 **2. Install it from a command of your tool,** such as `my-tool agent setup`:
 
 ```csharp
-using KaizenTicketing.SkillEmbed;
+using Kaizen.SkillEmbed;
 
 var skill = EmbeddedSkill.FromAssembly(typeof(Program).Assembly, "my-tool", "skills/my-tool/");
 var installer = new SkillInstaller(skill, owner: "my-tool", version: "1.4.0");

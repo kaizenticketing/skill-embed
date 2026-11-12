@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
-using KaizenTicketing.SkillEmbed.Agents.Models;
+using Kaizen.SkillEmbed.Agents.Models;
 
-namespace KaizenTicketing.SkillEmbed.Agents;
+namespace Kaizen.SkillEmbed.Agents;
 
 /// <summary>
 /// Reads agents.json without reflection, so the library works in a Native AOT binary.

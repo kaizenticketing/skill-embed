@@ -1,4 +1,4 @@
-namespace KaizenTicketing.SkillEmbed;
+namespace Kaizen.SkillEmbed;
 
 /// <summary>
 /// One file of an <see cref="EmbeddedSkill"/>.

@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace KaizenTicketing.SkillEmbed.Agents;
+namespace Kaizen.SkillEmbed.Agents;
 
 /// <summary>
 /// A path as the agent table writes it: forward slashes, with <c>{home}</c> for the user's home directory and

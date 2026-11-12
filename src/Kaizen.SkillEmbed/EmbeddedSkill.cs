@@ -1,7 +1,7 @@
 using System.Reflection;
 using System.Text;
 
-namespace KaizenTicketing.SkillEmbed;
+namespace Kaizen.SkillEmbed;
 
 /// <summary>
 /// A skill a program carries inside itself: a name and its files, of which <c>SKILL.md</c> is one.

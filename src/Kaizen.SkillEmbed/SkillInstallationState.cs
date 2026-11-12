@@ -1,4 +1,4 @@
-namespace KaizenTicketing.SkillEmbed;
+namespace Kaizen.SkillEmbed;
 
 /// <summary>
 /// What a skill's directory in an agent holds, against the skill the program carries.

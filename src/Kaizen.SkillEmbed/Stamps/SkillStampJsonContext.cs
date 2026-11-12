@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace KaizenTicketing.SkillEmbed.Stamps;
+namespace Kaizen.SkillEmbed.Stamps;
 
 /// <summary>
 /// Reads and writes a stamp without reflection, so the library works in a Native AOT binary.

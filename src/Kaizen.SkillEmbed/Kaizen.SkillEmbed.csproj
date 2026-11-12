@@ -2,12 +2,14 @@
 
 	<PropertyGroup>
 		<TargetFrameworks>net8.0;net10.0</TargetFrameworks>
-		<RootNamespace>KaizenTicketing.SkillEmbed</RootNamespace>
+		<RootNamespace>Kaizen.SkillEmbed</RootNamespace>
 		<IsAotCompatible>true</IsAotCompatible>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<PropertyGroup>
+		<!-- another publisher holds the Kaizen. prefix on nuget.org, so the package takes the company's full name - the
+		     namespace and the assembly stay Kaizen., as in the ticketing repository -->
 		<PackageId>KaizenTicketing.SkillEmbed</PackageId>
 		<!-- the publish workflow gives the version of the release - this one is for a build from a checkout -->
 		<Version>0.1.0-dev</Version>
@@ -30,13 +32,13 @@
 
 	<ItemGroup>
 		<!-- the agent table, written by scripts/generate-agents.mjs -->
-		<EmbeddedResource Include="Agents\agents.json" LogicalName="KaizenTicketing.SkillEmbed.agents.json" />
+		<EmbeddedResource Include="Agents\agents.json" LogicalName="Kaizen.SkillEmbed.agents.json" />
 		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
 		<None Include="..\..\THIRD-PARTY-NOTICES.txt" Pack="true" PackagePath="\" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="KaizenTicketing.SkillEmbed.Tests" />
+		<InternalsVisibleTo Include="Kaizen.SkillEmbed.Tests" />
 	</ItemGroup>
 
 </Project>

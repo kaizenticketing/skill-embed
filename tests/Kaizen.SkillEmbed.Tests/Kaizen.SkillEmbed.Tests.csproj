@@ -3,7 +3,7 @@
 	<PropertyGroup>
 		<TargetFramework>net10.0</TargetFramework>
 		<OutputType>Exe</OutputType>
-		<RootNamespace>KaizenTicketing.SkillEmbed.Tests</RootNamespace>
+		<RootNamespace>Kaizen.SkillEmbed.Tests</RootNamespace>
 		<IsPackable>false</IsPackable>
 		<UseMicrosoftTestingPlatformRunner>true</UseMicrosoftTestingPlatformRunner>
 		<TestingPlatformDotnetTestSupport>true</TestingPlatformDotnetTestSupport>
@@ -17,7 +17,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\..\src\KaizenTicketing.SkillEmbed\KaizenTicketing.SkillEmbed.csproj" />
+		<ProjectReference Include="..\..\src\Kaizen.SkillEmbed\Kaizen.SkillEmbed.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

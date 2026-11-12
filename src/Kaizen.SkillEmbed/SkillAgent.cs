@@ -1,7 +1,7 @@
-using KaizenTicketing.SkillEmbed.Agents;
-using KaizenTicketing.SkillEmbed.Agents.Models;
+using Kaizen.SkillEmbed.Agents;
+using Kaizen.SkillEmbed.Agents.Models;
 
-namespace KaizenTicketing.SkillEmbed;
+namespace Kaizen.SkillEmbed;
 
 /// <summary>
 /// An AI coding agent that reads skills from a directory of the user's: where that directory is, and what shows that

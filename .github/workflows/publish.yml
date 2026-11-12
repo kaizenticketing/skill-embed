@@ -40,13 +40,13 @@ jobs:
           fi
           echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
 
-      - run: dotnet test KaizenTicketing.SkillEmbed.slnx --configuration Release
+      - run: dotnet test Kaizen.SkillEmbed.slnx --configuration Release
 
       - name: Pack
         env:
           VERSION: ${{ steps.version.outputs.version }}
         run: >
-          dotnet pack src/KaizenTicketing.SkillEmbed/KaizenTicketing.SkillEmbed.csproj --configuration Release --output artifacts
+          dotnet pack src/Kaizen.SkillEmbed/Kaizen.SkillEmbed.csproj --configuration Release --output artifacts
           -p:Version="$VERSION" -p:ContinuousIntegrationBuild=true
 
       - name: Sign in to nuget.org

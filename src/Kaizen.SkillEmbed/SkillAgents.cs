@@ -1,7 +1,7 @@
 using System.Text.Json;
-using KaizenTicketing.SkillEmbed.Agents;
+using Kaizen.SkillEmbed.Agents;
 
-namespace KaizenTicketing.SkillEmbed;
+namespace Kaizen.SkillEmbed;
 
 /// <summary>
 /// The agents the library knows. The table is generated from the agent table of
@@ -9,7 +9,7 @@ namespace KaizenTicketing.SkillEmbed;
 /// </summary>
 public static class SkillAgents
 {
-	private const string TableResourceName = "KaizenTicketing.SkillEmbed.agents.json";
+	private const string TableResourceName = "Kaizen.SkillEmbed.agents.json";
 
 	private static readonly Lazy<List<SkillAgent>> Table = new(Load);
 
