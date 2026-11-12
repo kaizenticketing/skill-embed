@@ -83,4 +83,31 @@ public class SkillAgentTests
 		Assert.Throws<FormatException>(() => new SkillAgent("bad", "Bad", "{cwd}/skills", "{home}/.bad").GetSkillsDirectory(home.On()));
 		Assert.Throws<ArgumentException>(() => new SkillAgent("bad", "Bad", "{home}/skills"));
 	}
+
+	[Theory]
+	[InlineData(null, null, null)]
+	[InlineData("CLAUDECODE", "1", "claude-code")]
+	[InlineData("CODEX_THREAD_ID", "a1b2", "codex")]
+	[InlineData("CURSOR_AGENT", "1", "cursor")]
+	[InlineData("GEMINI_CLI", "1", "gemini-cli")]
+	[InlineData("ANTIGRAVITY_AGENT", "1", "antigravity")]
+	[InlineData("COPILOT_MODEL", "gpt", "github-copilot")]
+	[InlineData("OPENCODE", "1", "opencode")]
+	// the agent announces itself - by the table's name or by detect-agent's
+	[InlineData("AI_AGENT", "codex", "codex")]
+	[InlineData("AI_AGENT", "claude", "claude-code")]
+	// cursor's own terminal, where a person types, and an agent the table does not have
+	[InlineData("CURSOR_TRACE_ID", "a1b2", null)]
+	[InlineData("OPENCODE", "0", null)]
+	[InlineData("AI_AGENT", "no-such-agent", null)]
+	public void The_agent_that_runs_the_program_is_detected_by_its_environment(string? variable, string? value, string? expected)
+	{
+		// *** arrange ***
+		using var home = new TemporaryHome();
+		if (variable != null)
+			home.SetVariable(variable, value!);
+
+		// *** act & assert ***
+		Assert.Equal(expected, SkillAgents.DetectCaller(home.On())?.Name);
+	}
 }

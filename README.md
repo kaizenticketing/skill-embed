@@ -105,6 +105,18 @@ var mine = new SkillAgent("my-agent", "My Agent", skillsDirectory: "{home}/.my-a
 var installer = new SkillInstaller(skill, "my-tool", "1.4.0", agents: [.. SkillAgents.All, mine]);
 ```
 
+### Telling an agent about your skill
+
+A person at a terminal can read your README; an agent running your tool only knows what the tool tells it. `SkillAgents.DetectCaller()` says which agent runs your program - Claude Code, Codex, Cursor, Gemini CLI, Antigravity, Augment, OpenCode, GitHub Copilot, or any agent that sets `AI_AGENT` - by the environment variables it sets in the shell it runs commands in. When it is one, and it does not have your skill, tell it:
+
+```csharp
+var caller = SkillAgents.DetectCaller();
+if (caller != null && installer.GetInstallations([caller]).Single().State != SkillInstallationState.Current)
+    Console.Error.WriteLine($"my-tool: {caller.DisplayName} does not have the my-tool skill. Ask the user whether to run: my-tool agent setup --agent {caller.Name}");
+```
+
+A person and a CI job set none of these variables, so they never see the line. Say *ask the user*: installing writes into the user's agent directories, which is theirs to decide.
+
 ### Where the table comes from
 
 The table is not maintained by hand. `scripts/generate-agents.mjs` generates it from the agent table of [vercel-labs/skills](https://github.com/vercel-labs/skills), the `npx skills` installer, which a great many people keep correct. A weekly workflow runs the script against their newest release and opens a pull request when a row changed.
