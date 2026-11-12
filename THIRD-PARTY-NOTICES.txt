@@ -1,4 +1,4 @@
-Kaizen.SkillEmbed includes material from the project below.
+KaizenTicketing.SkillEmbed includes material from the project below.
 
 ================================================================================
 vercel-labs/skills - https://github.com/vercel-labs/skills

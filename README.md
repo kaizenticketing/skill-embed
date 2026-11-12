@@ -1,8 +1,8 @@
-# Kaizen.SkillEmbed
+# KaizenTicketing.SkillEmbed
 
 Ship an [agent skill](https://agentskills.io/) inside a .NET command line, and have the command line install it.
 
-Your tool carries its skill as embedded resources. `Kaizen.SkillEmbed` finds the AI coding agents on the user's machine - Claude Code, Codex, Cursor, Antigravity and [70 more](docs/supported-agents.md) - copies the skill into each one's skills directory, and brings those copies up to date when the tool itself is updated. The skill can never be a different version from the binary that explains it.
+Your tool carries its skill as embedded resources. `KaizenTicketing.SkillEmbed` finds the AI coding agents on the user's machine - Claude Code, Codex, Cursor, Antigravity and [70 more](docs/supported-agents.md) - copies the skill into each one's skills directory, and brings those copies up to date when the tool itself is updated. The skill can never be a different version from the binary that explains it.
 
 - No dependencies, and it works in a Native AOT binary.
 - .NET 8 and .NET 10.
@@ -11,8 +11,10 @@ Your tool carries its skill as embedded resources. `Kaizen.SkillEmbed` finds the
 ## Install
 
 ```bash
-dotnet add package Kaizen.SkillEmbed
+dotnet add package KaizenTicketing.SkillEmbed
 ```
+
+The package is `KaizenTicketing.SkillEmbed`, and its namespace is `Kaizen.SkillEmbed`, as in the rest of Kaizen Ticketing's code.
 
 ## Use
 
