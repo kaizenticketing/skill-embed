@@ -1,0 +1,42 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net10.0</TargetFrameworks>
+		<RootNamespace>Kaizen.SkillEmbed</RootNamespace>
+		<IsAotCompatible>true</IsAotCompatible>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<PackageId>Kaizen.SkillEmbed</PackageId>
+		<!-- the publish workflow gives the version of the release - this one is for a build from a checkout -->
+		<Version>0.1.0-dev</Version>
+		<Title>Kaizen.SkillEmbed</Title>
+		<Description>Ship an agent skill inside a .NET command line: detect the AI coding agents on the machine (Claude Code, Codex, Cursor, Antigravity and 70 more), install the embedded skill into each, and refresh the copies when the command line is updated.</Description>
+		<Authors>Kaizen Ticketing Solutions LTD</Authors>
+		<Company>Kaizen Ticketing Solutions LTD</Company>
+		<Copyright>Copyright (c) 2026 Kaizen Ticketing Solutions LTD</Copyright>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>agent-skills;skills;claude-code;codex;cursor;cli;ai;agents</PackageTags>
+		<PackageProjectUrl>https://github.com/kaizenticketing/skill-embed</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/kaizenticketing/skill-embed</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- the agent table, written by scripts/generate-agents.mjs -->
+		<EmbeddedResource Include="Agents\agents.json" LogicalName="Kaizen.SkillEmbed.agents.json" />
+		<None Include="..\..\README.md" Pack="true" PackagePath="\" />
+		<None Include="..\..\THIRD-PARTY-NOTICES.txt" Pack="true" PackagePath="\" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<InternalsVisibleTo Include="Kaizen.SkillEmbed.Tests" />
+	</ItemGroup>
+
+</Project>

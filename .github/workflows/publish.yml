@@ -1,0 +1,61 @@
+name: Publish
+
+# a GitHub Release named vX.Y.Z publishes that version to nuget.org, through nuget.org's trusted publishing: no API
+# key is stored. it needs, once:
+#   - a trusted publishing policy on nuget.org for this repository and this file (publish.yml)
+#   - the repository secret NUGET_USER: the nuget.org profile name (not the email) that owns the policy
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  publish:
+    name: Publish to nuget.org
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      # for the token nuget.org exchanges for a short-lived key
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
+        with:
+          dotnet-version: 10.0.x
+
+      - name: Read the version from the release's tag
+        id: version
+        env:
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          if ! [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::The release's tag is '$TAG'. It must be vX.Y.Z, or vX.Y.Z-suffix for a pre-release."
+            exit 1
+          fi
+          echo "version=${TAG#v}" >> "$GITHUB_OUTPUT"
+
+      - run: dotnet test Kaizen.SkillEmbed.slnx --configuration Release
+
+      - name: Pack
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: >
+          dotnet pack src/Kaizen.SkillEmbed/Kaizen.SkillEmbed.csproj --configuration Release --output artifacts
+          -p:Version="$VERSION" -p:ContinuousIntegrationBuild=true
+
+      - name: Sign in to nuget.org
+        id: login
+        uses: NuGet/login@ebc737b6fc418a6ca0073cf116ec8dc156d8b81e # v1
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
+      - name: Push
+        env:
+          NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
+        run: dotnet nuget push "artifacts/*.nupkg" --api-key "$NUGET_API_KEY" --source https://api.nuget.org/v3/index.json
